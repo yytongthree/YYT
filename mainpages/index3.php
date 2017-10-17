@@ -124,7 +124,7 @@
 				<a class="img" title="我的头像" ><img src="images/face.jpg"></a>
 				<p>你好！<span class="userName"><?php echo $_SESSION['username'];?></span>, 欢迎登录</p>
 			</div>
-			<div class="navBar layui-side-scroll"></div>
+			<div class="navBar3 layui-side-scroll"></div>
 		</div>
 		<!-- 右侧内容 -->
 		<div class="layui-body layui-form">
@@ -160,8 +160,8 @@
 	<div class="site-mobile-shade"></div>
 
 	<script type="text/javascript" src="layui/layui.js"></script>
-	<script type="text/javascript" src="js/nav.js"></script>
-	<script type="text/javascript" src="js/leftNav.js"></script>
+	<script type="text/javascript" src="js/nav3.js"></script>
+	<script type="text/javascript" src="js/leftNav3.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

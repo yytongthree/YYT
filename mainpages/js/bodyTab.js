@@ -18,9 +18,27 @@ layui.define(["element","jquery"],function(exports){
 		};
 
 	//显示左侧菜单
-	if($(".navBar").html() == ''){
+	if($(".navBar1").html() == ''){
 		var _this = this;
-		$(".navBar").html(navBar(navs)).height($(window).height()-230);
+		$(".navBar1").html(navBar1(navs1)).height($(window).height()-230);
+		element.init();  //初始化页面元素
+		$(window).resize(function(){
+			$(".navBar").height($(window).height()-230);
+		})
+	}
+	
+	if($(".navBar2").html() == ''){
+		var _this = this;
+		$(".navBar2").html(navBar2(navs2)).height($(window).height()-230);
+		element.init();  //初始化页面元素
+		$(window).resize(function(){
+			$(".navBar").height($(window).height()-230);
+		})
+	}
+	
+	if($(".navBar3").html() == ''){
+		var _this = this;
+		$(".navBar3").html(navBar3(navs3)).height($(window).height()-230);
 		element.init();  //初始化页面元素
 		$(window).resize(function(){
 			$(".navBar").height($(window).height()-230);
