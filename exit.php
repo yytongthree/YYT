@@ -11,7 +11,7 @@ session_destroy ();
 
 ?> 
 <script type="text/javascript"> 
- window.location.href="login.html"; 
+ window.location.href="index.html"; 
 </script> 
 </body> 
 </html> 

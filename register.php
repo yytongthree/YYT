@@ -46,7 +46,7 @@
 ?>
 					<script type="text/javascript"> 
     				alert("注册成功"); 
-    				window.location.href="login.html"; 
+    				window.location.href="index.html"; 
  					</script>
 <?php
 					} else {
@@ -84,7 +84,7 @@
 ?>
 					<script type="text/javascript"> 
     				alert("注册成功"); 
-    				window.location.href="login.html"; 
+    				window.location.href="index.html"; 
  					</script>
 <?php
 					} else {
@@ -122,7 +122,7 @@
 ?>
 					<script type="text/javascript"> 
     				alert("注册成功"); 
-    				window.location.href="login.html"; 
+    				window.location.href="index.html"; 
  					</script>
 <?php
 					} else {
