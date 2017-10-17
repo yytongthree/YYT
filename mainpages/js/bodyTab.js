@@ -23,7 +23,7 @@ layui.define(["element","jquery"],function(exports){
 		$(".navBar1").html(navBar1(navs1)).height($(window).height()-230);
 		element.init();  //初始化页面元素
 		$(window).resize(function(){
-			$(".navBar").height($(window).height()-230);
+			$(".navBar1").height($(window).height()-230);
 		})
 	}
 	
@@ -32,7 +32,7 @@ layui.define(["element","jquery"],function(exports){
 		$(".navBar2").html(navBar2(navs2)).height($(window).height()-230);
 		element.init();  //初始化页面元素
 		$(window).resize(function(){
-			$(".navBar").height($(window).height()-230);
+			$(".navBar2").height($(window).height()-230);
 		})
 	}
 	
@@ -41,7 +41,7 @@ layui.define(["element","jquery"],function(exports){
 		$(".navBar3").html(navBar3(navs3)).height($(window).height()-230);
 		element.init();  //初始化页面元素
 		$(window).resize(function(){
-			$(".navBar").height($(window).height()-230);
+			$(".navBar3").height($(window).height()-230);
 		})
 	}
 
