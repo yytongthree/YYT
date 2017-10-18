@@ -1,7 +1,7 @@
 var navs1 = [{
-	"title" : "后台首页",
+	"title" : "个人中心",
 	"icon" : "icon-computer",
-	"href" : "page/main.html",
+	"href" : "page/main1.html",
 	"spread" : false
 },{
 	"title" : "聊天室",
@@ -17,15 +17,5 @@ var navs1 = [{
 	"title" : "友情链接",
 	"icon" : "icon-text",
 	"href" : "page/links/linksList.html",
-	"spread" : false
-},{
-	"title" : "404页面",
-	"icon" : "&#xe61c;",
-	"href" : "page/404.html",
-	"spread" : false
-},{
-	"title" : "系统基本参数",
-	"icon" : "&#xe631;",
-	"href" : "page/systemParameter/systemParameter.html",
 	"spread" : false
 }]

@@ -50,6 +50,7 @@
 		awards varchar(100),
 		RA varchar(100),
 		SN int(5),	
+		nickname varchar(50),
 		picture blob
 	)";
 	if(mysqli_query($conn,$sql))
@@ -77,6 +78,7 @@
 		SS int(10),
 		INPR int(10),
 		hear int(10),
+		nickname varchar(50),
 		picture blob
 	)";
 	if(mysqli_query($conn,$sql))

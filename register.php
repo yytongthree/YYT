@@ -79,7 +79,8 @@
                     <?php
 				}else{
 					$sql="INSERT INTO register_info (name,password,truename,sex,age,num,addr,authority) VALUES('{$name}','{$password}','{$truename}','{$sex}','{$age}','{$num}','{$addr}','{$authority}')";
-   					if(mysqli_query($conn,$sql))
+					$sql2="UPDATE inha_info SET sex='$sex',age='$age',num='$num',addr='$addr',nickname='$name' WHERE name='$truename'";
+   			if(mysqli_query($conn,$sql)&&mysqli_query($conn,$sql2))
    					{
 ?>
 					<script type="text/javascript"> 
@@ -117,7 +118,8 @@
 <?php
 				}else{
 					$sql="INSERT INTO register_info (name,password,truename,sex,age,num,addr,authority) VALUES('{$name}','{$password}','{$truename}','{$sex}','{$age}','{$num}','{$addr}','{$authority}')";
-   					if(mysqli_query($conn,$sql))
+					$sql2="UPDATE docter_info SET sex='$sex',age='$age',num='$num',nickname='$name' WHERE name='$truename'";
+   					if(mysqli_query($conn,$sql)&&mysqli_query($conn,$sql2))
    					{
 ?>
 					<script type="text/javascript"> 

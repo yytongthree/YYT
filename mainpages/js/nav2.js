@@ -1,8 +1,28 @@
 var navs2 = [{
-	"title" : "后台首页",
+	"title" : "个人中心",
 	"icon" : "icon-computer",
-	"href" : "page/main.html",
-	"spread" : false
+	"href" : "",
+	"spread" : false,
+	"children" :[
+		{
+			"title" : "健康档案",
+			"icon" : "&#xe631;",
+			"href" : "query.php",
+			"spread" : false
+		},
+		{
+			"title" : "用药查询",
+			"icon" : "&#xe631;",
+			"href" : "",
+			"spread" : false
+		},
+		{
+			"title" : "健康食谱",
+			"icon" : "&#xe631;",
+			"href" : "",
+			"spread" : false
+		}
+	]
 },{
 	"title" : "聊天室",
 	"icon" : "icon-text",
@@ -14,32 +34,27 @@ var navs2 = [{
 	"href" : "page/news/newsList.html",
 	"spread" : false
 },{
-	"title" : "友情链接",
+	"title" : "签约医生",
 	"icon" : "icon-text",
 	"href" : "page/links/linksList.html",
-	"spread" : false
-},{
-	"title" : "系统基本参数",
-	"icon" : "&#xe631;",
-	"href" : "page/systemParameter/systemParameter.html",
-	"spread" : false
-},{
-	"title" : "二级菜单演示",
-	"icon" : "&#xe61c;",
-	"href" : "",
 	"spread" : false,
 	"children" : [
 		{
-			"title" : "二级菜单1",
+			"title" : "身体诊断",
 			"icon" : "&#xe631;",
 			"href" : "",
 			"spread" : false
 		},
 		{
-			"title" : "二级菜单2",
+			"title" : "电子处方",
 			"icon" : "&#xe631;",
 			"href" : "",
 			"spread" : false
 		}
 	]
+},{
+	"title" : "友情链接",
+	"icon" : "icon-text",
+	"href" : "page/links/linksList.html",
+	"spread" : false
 }]
