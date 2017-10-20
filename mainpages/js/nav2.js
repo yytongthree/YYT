@@ -26,7 +26,7 @@ var navs2 = [{
 },{
 	"title" : "聊天室",
 	"icon" : "icon-text",
-	"href" : "page/news/newsList.html",
+	"href" : "page/message/message.php",
 	"spread" : false
 },{
 	"title" : "文章列表",

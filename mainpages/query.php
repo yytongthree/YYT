@@ -8,14 +8,15 @@
      //创建一个mysql连接  
      $connection = mysqli_connect($host, $user, $pass,$db) or die("Unable to connect!");   
      //开始查询  
-     $query = "SELECT * FROM inha_info WHERE nickname='{$_SESSION['username']}'";  
+     $query = "SELECT * FROM inha_info WHERE nickname='{$_SESSION['username']}'"; 
      //执行SQL语句  
      $result = mysqli_query($connection,$query) or die("Error in query: $query. ".mysqli_error());  
      //显示返回的记录集行数  
      if(mysqli_num_rows($result)>0){  
          //如果返回的数据集行数大于0，则开始以表格的形式显示  
          echo "<table cellpadding=10 border=1>";  
-         while($row=mysqli_fetch_row($result)){  
+         while($row=mysqli_fetch_row($result)){ 
+		 	 echo "<caption>".$row[1]."的身体数据</caption>"; 
 			 echo "<tr>"; 
 			 echo "<td>身高(height)</td><td>".$row[6]."</td><td>cm</td>";
 			 echo "<td>体重(weight)</td><td>".$row[7]."</td><td>kg</td>";

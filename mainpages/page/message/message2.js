@@ -1,4 +1,5 @@
 var $;
+var uname;
 layui.config({
 	base : "../../js/"
 }).use(['form','layer','layedit'],function(){
@@ -12,6 +13,16 @@ layui.config({
          tool: ['face'],
          height:100
     });
+	$.ajax({
+		url:"message2.php?action=ok",
+		type:'POST',
+		data:'uname='+uname,
+		async:true,
+		success: function(data){
+			uname=data;
+		}
+	})
+		
         
     form.on('select(selectMsg)',function(data){
         var len = $(".msgHtml tr").length;
@@ -33,7 +44,7 @@ layui.config({
     })
 
     //加载数据
-    $.get("../../json/message.json",function(data){
+    $.get("../../json/message2.json",function(data){
         var msgHtml = '',msgReply;
         for(var i=0; i<data.length; i++){
             if(data[i].msgReply && data[i].msgReply.length != 0){
@@ -78,14 +89,14 @@ layui.config({
         var index = layui.layer.open({
             title : "与 "+userName+" 的聊天",
             type : 2,
-            content : "messageReply.html",
+            content : "messageReply2.html",
             success : function(layero, index){
                 layui.layer.tips('点击此处返回消息列表', '.layui-layer-setwin .layui-layer-close', {
                     tips: 3
                 });
                 var body = layui.layer.getChildFrame('body', index);
                 //加载回复信息
-                $.get("../../json/message.json",function(data){
+                $.get("../../json/message2.json",function(data){
                     var msgReplyHtml = '',msgReply;
                     for(var i=0; i<data.length; i++){
                         if(data[i].msgReply && data[i].msgReply.length != 0){
@@ -142,7 +153,7 @@ layui.config({
             replyHtml += '  <td class="msg_info">';
             replyHtml += '    <img src="../../images/face.jpg" width="50" height="50">';
             replyHtml += '    <div class="user_info">';
-            replyHtml += '        <h2>请叫我马哥</h2>';
+            replyHtml += '        <h2>'+uname+'</h2>';
             replyHtml += '        <p>'+layedit.getContent(editIndex)+'</p>';
             replyHtml += '    </div>';
             replyHtml += '  </td>';
