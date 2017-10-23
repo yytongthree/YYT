@@ -19,66 +19,85 @@
      //创建一个mysql连接  
      $connection = mysqli_connect($host, $user, $pass,$db) or die("Unable to connect!");   
      //开始查询  
-     $query = "SELECT * FROM inha_info WHERE nickname='{$_SESSION['username']}'"; 
+     $query = "SELECT name FROM inha_info WHERE nickname='{$_SESSION['username']}'"; 
      //执行SQL语句  
      $result = mysqli_query($connection,$query) or die("Error in query: $query. ".mysqli_error()); 
+	 if(mysqli_num_rows($result)>0){  
+         //如果返回的数据集行数大于0，则开始以表格的形式显示   
+         while($row=mysqli_fetch_row($result)){
+			 $uname=$row[0];
+		 }
+	 }
 ?>
-<blockquote class="layui-elem-quote news_search">
+<blockquote class="layui-elem-quote">
 		<div class="layui-inline">
 		    <div class="layui-input-inline">
-		    	<input type="text" value="" placeholder="请输入关键字" class="layui-input search_input">
+		    	<input type="text" value="" placeholder="请输入关键字" class="layui-input">
 		    </div>
-		    <a class="layui-btn search_btn">查询</a>
+		    <a class="layui-btn">查询</a>
 		</div>
         </blockquote>
-	<div class="layui-form news_list">
+	<div class="layui-form">
 	  	<table class="layui-table">
 		    <colgroup>
 				<col width="20%">
 				<col width="80%">
                  </colgroup>
-
-            <?php
-			if(mysqli_num_rows($result)>0){  
-         //如果返回的数据集行数大于0，则开始以表格的形式显示   
-         while($row=mysqli_fetch_row($result)){ ?>
          <thead>
-				<caption><big><b><? echo $row[1];?>的身体数据</b></big></caption>
 				<tr>
 					<th>项目</th>
 					<th>内容</th>
 				</tr> 
 		    </thead>
+<?php
+		    //开始查询  
+     		$query = "SELECT doc_ID FROM doc_inha WHERE inha_name='{$uname}'"; 
+     		//执行SQL语句  
+     		$result = mysqli_query($connection,$query) or die("Error in query: $query. ".mysqli_error()); 
+	 		if(mysqli_num_rows($result)>0){  
+         	//如果返回的数据集行数大于0，则开始以表格的形式显示   
+         		while($row=mysqli_fetch_row($result)){
+					$uID=$row[0];
+				}
+			}
+			
+			$query = "SELECT * FROM docter_info WHERE doc_ID='{$uID}'"; 
+     		//执行SQL语句  
+     		$result = mysqli_query($connection,$query) or die("Error in query: $query. ".mysqli_error()); 
+	 		if(mysqli_num_rows($result)>0){  
+         	//如果返回的数据集行数大于0，则开始以表格的形式显示   
+         		while($row=mysqli_fetch_row($result)){
+?>
 		    <tbody>
 			 <tr>
-			 <td>身高(height)</td><td><?php echo $row[6];?></td><td>cm</td>
+			 <td>医生编号</td><td><?php echo $row[0];?></td>
              </tr>
              <tr>
-			 <td>体重(weight)</td><td><?php echo $row[7];?></td><td>kg</td>
+			 <td>医生姓名</td><td><?php echo $row[1];?></td>
              </tr> 
 			 <tr>
-			 <td>BMI指数(TZZS)</td><td><?php echo $row[8]?></td><td>kg/m²</td>
+			 <td>性别</td><td><?php echo $row[2]?></td>
              </tr>
              <tr>
-			 <td>心率(HR)</td><td><?php echo $row[9];?></td><td>bpm</td>
+			 <td>年龄</td><td><?php echo $row[3];?></td>
              </tr>
 			 <tr>
-			 <td>血压(BP)</td><td><?php echo $row[10];?></td><td>mmHg</td>
+			 <td>电话</td><td><?php echo $row[4];?></td>
              </tr>
              <tr>
-			 <td>血糖(BG)</td><td><?php echo $row[11];?></td><td>mmol/L</td>
+			 <td>擅长科目</td><td><?php echo $row[5];?></td>
              </tr> 
 			 <tr>
-			 <td>骨质密度(BMD)</td><td><?php echo $row[12];?></td><td>g/cm³</td>
+			 <td>曾获荣誉</td><td><?php echo $row[6];?></td>
              </tr>
              <tr>
-			 <td>视力(SS)</td><td><?php echo $row[13];?></td><td>（无单位）</td>
+			 <td>管辖区域</td><td><?php echo $row[7];?></td>
              </tr>
 			 <tr>
-			 <td>眼压(INPR)</td><td><?php echo $row[14];?></td><td>mmHg</td>
+			 <td>签约人数</td><td><?php echo $row[8];?></td>
              </tr>
              <tr>
-			 <td>听力(hear)</td><td><?php echo $row[15];?></td><td>dB</td>
+			 <td>注册昵称</td><td><?php echo $row[9];?></td>
              </tr>
 <?php
          }  

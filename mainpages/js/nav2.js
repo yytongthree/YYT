@@ -42,7 +42,7 @@ var navs2 = [{
 		{
 			"title" : "签约医生资料",
 			"icon" : "&#xe631;",
-			"href" : "",
+			"href" : "page/docinfo.php",
 			"spread" : false
 		},
 		{
