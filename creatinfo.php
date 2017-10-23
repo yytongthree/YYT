@@ -91,15 +91,17 @@
 	$sql = "CREATE TABLE prescription 
 	(
 		username varchar(50) not null,
+		PN varchar(100) not null,
 		MCD date not null,
 		MN varchar(50),
-		DF varchar(50),
 		UAD varchar(100),
 		tabu varchar(500),
 		AR varchar(500),
 		notes varchar(500),
-		count int(3)
+		count varchar(20),
+		docter varchar(20)
 	)";
+	//PN为药方名称
 	if(mysqli_query($conn,$sql))
    {
 		echo "<br>success4";

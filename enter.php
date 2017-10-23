@@ -30,7 +30,7 @@
   ?> 
   <script type="text/javascript"> 
     alert("用户名不存在"); 
-    window.location.href="login.html"; 
+    window.location.href="index.html"; 
   </script> 
 <?php 
     } 

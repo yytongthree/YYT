@@ -7,13 +7,13 @@ var navs2 = [{
 		{
 			"title" : "健康档案",
 			"icon" : "&#xe631;",
-			"href" : "query.php",
+			"href" : "page/query.php",
 			"spread" : false
 		},
 		{
 			"title" : "用药查询",
 			"icon" : "&#xe631;",
-			"href" : "",
+			"href" : "page/pharmacy.php",
 			"spread" : false
 		},
 		{
