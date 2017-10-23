@@ -153,5 +153,19 @@
 		echo "<br>Error7: " . $sql . "<br>" . mysqli_error($conn);
 	}
 	
+	$sql = "CREATE TABLE doc_inha 
+	(
+		doc_ID int(11) unsigned NOT NULL,
+		doc_name varchar(50) not null,
+		inha_ID int(11) unsigned NOT NULL ,
+		inha_name varchar(50) not null
+	)";
+	if(mysqli_query($conn,$sql))
+   {
+		echo "<br>success8";
+	} else {
+		echo "<br>Error8: " . $sql . "<br>" . mysqli_error($conn);
+	}
+	
 	mysqli_close($conn);
 ?>

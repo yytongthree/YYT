@@ -40,6 +40,12 @@ var navs2 = [{
 	"spread" : false,
 	"children" : [
 		{
+			"title" : "签约医生资料",
+			"icon" : "&#xe631;",
+			"href" : "",
+			"spread" : false
+		},
+		{
 			"title" : "身体诊断",
 			"icon" : "&#xe631;",
 			"href" : "",

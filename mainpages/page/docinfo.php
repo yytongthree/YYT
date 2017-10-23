@@ -34,9 +34,8 @@
 	<div class="layui-form news_list">
 	  	<table class="layui-table">
 		    <colgroup>
-				<col width="50%">
-				<col width="25%">
-				<col width="25%">
+				<col width="20%">
+				<col width="80%">
                  </colgroup>
 
             <?php
@@ -46,9 +45,8 @@
          <thead>
 				<caption><big><b><? echo $row[1];?>的身体数据</b></big></caption>
 				<tr>
-					<th>身体指标</th>
-					<th>数据</th>
-					<th>单位</th>
+					<th>项目</th>
+					<th>内容</th>
 				</tr> 
 		    </thead>
 		    <tbody>

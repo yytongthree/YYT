@@ -88,17 +88,65 @@
 	$sql="INSERT INTO prescription (username,PN,MCD,MN,UAD,tabu,AR,notes,count,docter) VALUES('曹操','加味桃红四味汤','2011-05-05','赤芍','水煎服，1日2次','血虚者慎服；不宜与藜芦同用。','过量口服当归煎剂、散剂偶有疲倦、嗜睡等反应，停药后可消失。当归挥发油穴位注射可使病人出现发热、头痛、口干、恶心。当归乙醚提出物毒性较强，少量即可造成死亡。','请谨遵遗嘱','10g','华佗')";
 	if(mysqli_query($conn,$sql))
    {
-		echo "<br>success10";
+		echo "<br>success11";
 	} else {
-		echo "<br>Error10: " . $sql . "<br>" . mysqli_error($conn);
+		echo "<br>Error11: " . $sql . "<br>" . mysqli_error($conn);
 	}
 	
 	$sql="INSERT INTO prescription (username,PN,MCD,MN,UAD,tabu,AR,notes,count,docter) VALUES('曹操','心绞痛','2011-05-06','立普妥','每日一次','血虚者慎服；不宜与藜芦同用。','过量口服当归煎剂、散剂偶有疲倦、嗜睡等反应，停药后可消失。当归挥发油穴位注射可使病人出现发热、头痛、口干、恶心。当归乙醚提出物毒性较强，少量即可造成死亡。','请进遵医嘱','20mg','华佗')";
 	if(mysqli_query($conn,$sql))
    {
-		echo "<br>success11";
+		echo "<br>success12";
 	} else {
-		echo "<br>Error11: " . $sql . "<br>" . mysqli_error($conn);
+		echo "<br>Error12: " . $sql . "<br>" . mysqli_error($conn);
+	}
+	
+	$sql="INSERT INTO inha_info (inha_ID,name,sex,age,num,addr,height,weight,TZZS,HR,BP,BG,BMD,SS,INPR,hear) VALUES('20003','刘备','男','40','12345678910','蜀国','175','50','18.5','90','95/65','4.5','0.5','5.2','16','15')";
+	if(mysqli_query($conn,$sql))
+   {
+		echo "<br>success13";
+	} else {
+		echo "<br>Error13: " . $sql . "<br>" . mysqli_error($conn);
+	}
+	
+	$sql="INSERT INTO inha_info (inha_ID,name,sex,age,num,addr,height,weight,TZZS,HR,BP,BG,BMD,SS,INPR,hear) VALUES('20004','秦襄王','男','60','12345678910','秦国','185','70','17','90','95/65','4.5','-0.5','5.2','16','15')";
+	if(mysqli_query($conn,$sql))
+   {
+		echo "<br>success14";
+	} else {
+		echo "<br>Error14: " . $sql . "<br>" . mysqli_error($conn);
+	}
+	
+	$sql="INSERT INTO doc_inha (doc_ID,doc_name,inha_ID,inha_name) VALUES('30001','华佗','20001','曹操')";
+	if(mysqli_query($conn,$sql))
+   {
+		echo "<br>success15";
+	} else {
+		echo "<br>Error15: " . $sql . "<br>" . mysqli_error($conn);
+	}
+	
+	$sql="INSERT INTO doc_inha (doc_ID,doc_name,inha_ID,inha_name) VALUES('30001','华佗','20003','刘备')";
+	if(mysqli_query($conn,$sql))
+   {
+		echo "<br>success16";
+	} else {
+		echo "<br>Error16: " . $sql . "<br>" . mysqli_error($conn);
+	}
+	
+	$sql="INSERT INTO doc_inha (doc_ID,doc_name,inha_ID,inha_name) VALUES('30002','扁鹊','20002','蔡恒公')";
+	if(mysqli_query($conn,$sql))
+   {
+		echo "<br>success17";
+	} else {
+		echo "<br>Error17: " . $sql . "<br>" . mysqli_error($conn);
+	}
+	
+	$sql="INSERT INTO doc_inha (doc_ID,doc_name,inha_ID,inha_name) VALUES('30002','扁鹊','20004','秦襄王')";
+	if(mysqli_query($conn,$sql))
+   {
+		echo "<br>success18";
+	} else {
+		echo "<br>Error18: " . $sql . "<br>" . mysqli_error($conn);
 	}
 	
 	mysqli_close($conn);
