@@ -22,15 +22,12 @@
      $query = "SELECT * FROM inha_info WHERE nickname='{$_SESSION['username']}'"; 
      //执行SQL语句  
      $result = mysqli_query($connection,$query) or die("Error in query: $query. ".mysqli_error()); 
+	 if(mysqli_num_rows($result)>0){  
+         //如果返回的数据集行数大于0，则开始以表格的形式显示   
+         while($row=mysqli_fetch_row($result)){
+			 $uname=$row[1];
 ?>
-<blockquote class="layui-elem-quote news_search">
-		<div class="layui-inline">
-		    <div class="layui-input-inline">
-		    	<input type="text" value="" placeholder="请输入关键字" class="layui-input search_input">
-		    </div>
-		    <a class="layui-btn search_btn">查询</a>
-		</div>
-        </blockquote>
+<blockquote class="layui-elem-quote title"><big><b><?php echo $uname;?>的身体数据</b></big></blockquote>
 	<div class="layui-form">
 	  	<table class="layui-table">
 		    <colgroup>
@@ -38,13 +35,7 @@
 				<col width="25%">
 				<col width="25%">
                  </colgroup>
-
-            <?php
-			if(mysqli_num_rows($result)>0){  
-         //如果返回的数据集行数大于0，则开始以表格的形式显示   
-         while($row=mysqli_fetch_row($result)){ ?>
          <thead>
-				<caption><big><b><? echo $row[1];?>的身体数据</b></big></caption>
 				<tr>
 					<th>身体指标</th>
 					<th>数据</th>

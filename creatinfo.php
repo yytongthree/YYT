@@ -167,5 +167,20 @@
 		echo "<br>Error8: " . $sql . "<br>" . mysqli_error($conn);
 	}
 	
+	$sql = "CREATE TABLE diagnosis 
+	(
+		pation_ID int(11),;
+		symptom varchar(200),
+		conclu varchar(100),
+		diag_time date,
+		doc_name varchar(20)
+	)";
+	if(mysqli_query($conn,$sql))
+   {
+		echo "<br>success9";
+	} else {
+		echo "<br>Error9: " . $sql . "<br>" . mysqli_error($conn);
+	}
+	
 	mysqli_close($conn);
 ?>

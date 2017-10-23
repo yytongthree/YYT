@@ -48,7 +48,7 @@ var navs2 = [{
 		{
 			"title" : "身体诊断",
 			"icon" : "&#xe631;",
-			"href" : "",
+			"href" : "page/diagnosis.php",
 			"spread" : false
 		},
 		{

@@ -29,14 +29,7 @@
 		 }
 	 }
 ?>
-<blockquote class="layui-elem-quote">
-		<div class="layui-inline">
-		    <div class="layui-input-inline">
-		    	<input type="text" value="" placeholder="请输入关键字" class="layui-input">
-		    </div>
-		    <a class="layui-btn">查询</a>
-		</div>
-        </blockquote>
+<blockquote class="layui-elem-quote title"><big><b><?php echo $uname;?>的签约医生信息</b></big></blockquote>
 	<div class="layui-form">
 	  	<table class="layui-table">
 		    <colgroup>
@@ -49,6 +42,7 @@
 					<th>内容</th>
 				</tr> 
 		    </thead>
+            <tbody>
 <?php
 		    //开始查询  
      		$query = "SELECT doc_ID FROM doc_inha WHERE inha_name='{$uname}'"; 
@@ -68,7 +62,6 @@
          	//如果返回的数据集行数大于0，则开始以表格的形式显示   
          		while($row=mysqli_fetch_row($result)){
 ?>
-		    <tbody>
 			 <tr>
 			 <td>医生编号</td><td><?php echo $row[0];?></td>
              </tr>
