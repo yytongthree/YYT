@@ -24,8 +24,8 @@
      $result = mysqli_query($connection,$query) or die("Error in query: $query. ".mysqli_error()); 
 	 if(mysqli_num_rows($result)>0){  
          //如果返回的数据集行数大于0，则开始以表格的形式显示   
-         while($row=mysqli_fetch_row($result)){
-			 $uname=$row[1];
+         while($row=mysqli_fetch_array($result)){
+			 $uname=$row['name'];
 ?>
 <blockquote class="layui-elem-quote title"><big><b><?php echo $uname;?>的身体数据</b></big></blockquote>
 	<div class="layui-form">
@@ -44,34 +44,34 @@
 		    </thead>
 		    <tbody>
 			 <tr>
-			 <td>身高(height)</td><td><?php echo $row[6];?></td><td>cm</td>
+			 <td>身高(height)</td><td><?php echo $row['height'];?></td><td>cm</td>
              </tr>
              <tr>
-			 <td>体重(weight)</td><td><?php echo $row[7];?></td><td>kg</td>
+			 <td>体重(weight)</td><td><?php echo $row['weight'];?></td><td>kg</td>
              </tr> 
 			 <tr>
-			 <td>BMI指数(TZZS)</td><td><?php echo $row[8]?></td><td>kg/m²</td>
+			 <td>BMI指数(TZZS)</td><td><?php echo $row['TZZS']?></td><td>kg/m²</td>
              </tr>
              <tr>
-			 <td>心率(HR)</td><td><?php echo $row[9];?></td><td>bpm</td>
+			 <td>心率(HR)</td><td><?php echo $row['HR'];?></td><td>bpm</td>
              </tr>
 			 <tr>
-			 <td>血压(BP)</td><td><?php echo $row[10];?></td><td>mmHg</td>
+			 <td>血压(BP)</td><td><?php echo $row['BP'];?></td><td>mmHg</td>
              </tr>
              <tr>
-			 <td>血糖(BG)</td><td><?php echo $row[11];?></td><td>mmol/L</td>
+			 <td>血糖(BG)</td><td><?php echo $row['BG'];?></td><td>mmol/L</td>
              </tr> 
 			 <tr>
-			 <td>骨质密度(BMD)</td><td><?php echo $row[12];?></td><td>g/cm³</td>
+			 <td>骨质密度(BMD)</td><td><?php echo $row['BMD'];?></td><td>g/cm³</td>
              </tr>
              <tr>
-			 <td>视力(SS)</td><td><?php echo $row[13];?></td><td>（无单位）</td>
+			 <td>视力(SS)</td><td><?php echo $row['SS'];?></td><td>（无单位）</td>
              </tr>
 			 <tr>
-			 <td>眼压(INPR)</td><td><?php echo $row[14];?></td><td>mmHg</td>
+			 <td>眼压(INPR)</td><td><?php echo $row['INPR'];?></td><td>mmHg</td>
              </tr>
              <tr>
-			 <td>听力(hear)</td><td><?php echo $row[15];?></td><td>dB</td>
+			 <td>听力(hear)</td><td><?php echo $row['hear'];?></td><td>dB</td>
              </tr>
 <?php
          }  

@@ -24,8 +24,8 @@
      $result = mysqli_query($connection,$query) or die("Error in query: $query. ".mysqli_error()); 
 	 if(mysqli_num_rows($result)>0){  
          //如果返回的数据集行数大于0，则开始以表格的形式显示   
-         while($row=mysqli_fetch_row($result)){
-			 $uname=$row[0];
+         while($row=mysqli_fetch_array($result)){
+			 $uname=$row['name'];
 		 }
 	 }
 ?>
@@ -50,8 +50,8 @@
      		$result = mysqli_query($connection,$query) or die("Error in query: $query. ".mysqli_error()); 
 	 		if(mysqli_num_rows($result)>0){  
          	//如果返回的数据集行数大于0，则开始以表格的形式显示   
-         		while($row=mysqli_fetch_row($result)){
-					$uID=$row[0];
+         		while($row=mysqli_fetch_array($result)){
+					$uID=$row['doc_ID'];
 				}
 			}
 			
@@ -60,37 +60,37 @@
      		$result = mysqli_query($connection,$query) or die("Error in query: $query. ".mysqli_error()); 
 	 		if(mysqli_num_rows($result)>0){  
          	//如果返回的数据集行数大于0，则开始以表格的形式显示   
-         		while($row=mysqli_fetch_row($result)){
+         		while($row=mysqli_fetch_array($result)){
 ?>
 			 <tr>
-			 <td>医生编号</td><td><?php echo $row[0];?></td>
+			 <td>医生编号</td><td><?php echo $row['doc_ID'];?></td>
              </tr>
              <tr>
-			 <td>医生姓名</td><td><?php echo $row[1];?></td>
+			 <td>医生姓名</td><td><?php echo $row['name'];?></td>
              </tr> 
 			 <tr>
-			 <td>性别</td><td><?php echo $row[2]?></td>
+			 <td>性别</td><td><?php echo $row['sex']?></td>
              </tr>
              <tr>
-			 <td>年龄</td><td><?php echo $row[3];?></td>
+			 <td>年龄</td><td><?php echo $row['age'];?></td>
              </tr>
 			 <tr>
-			 <td>电话</td><td><?php echo $row[4];?></td>
+			 <td>电话</td><td><?php echo $row['num'];?></td>
              </tr>
              <tr>
-			 <td>擅长科目</td><td><?php echo $row[5];?></td>
+			 <td>擅长科目</td><td><?php echo $row['GS'];?></td>
              </tr> 
 			 <tr>
-			 <td>曾获荣誉</td><td><?php echo $row[6];?></td>
+			 <td>曾获荣誉</td><td><?php echo $row['awards'];?></td>
              </tr>
              <tr>
-			 <td>管辖区域</td><td><?php echo $row[7];?></td>
+			 <td>管辖区域</td><td><?php echo $row['RA'];?></td>
              </tr>
 			 <tr>
-			 <td>签约人数</td><td><?php echo $row[8];?></td>
+			 <td>签约人数</td><td><?php echo $row['SN'];?></td>
              </tr>
              <tr>
-			 <td>注册昵称</td><td><?php echo $row[9];?></td>
+			 <td>注册昵称</td><td><?php echo $row['nickname'];?></td>
              </tr>
 <?php
          }  

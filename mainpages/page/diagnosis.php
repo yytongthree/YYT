@@ -24,9 +24,9 @@
      $result = mysqli_query($connection,$query) or die("Error in query: $query. ".mysqli_error()); 
 	 if(mysqli_num_rows($result)>0){  
          //如果返回的数据集行数大于0，则开始以表格的形式显示   
-         while($row=mysqli_fetch_row($result)){
-			 $uname=$row[0];
-			 $uID=$row[1];
+         while($row=mysqli_fetch_array($result)){
+			 $uname=$row['name'];
+			 $uID=$row['inha_ID'];
 		 }
 	 }
 ?>
@@ -54,11 +54,12 @@
      		$result = mysqli_query($connection,$query) or die("Error in query: $query. ".mysqli_error()); 
 	 		if(mysqli_num_rows($result)>0){  
          	//如果返回的数据集行数大于0，则开始以表格的形式显示   
-         		while($row=mysqli_fetch_row($result)){
+         		while($row=mysqli_fetch_array($result)){
 					echo "<tr>";
-					for($count=1;$count<5;$count++){
-						echo "<td>".$row[$count]."</td>";
-					}
+					echo "<td>".$row['symptom']."</td>";
+					echo "<td>".$row['conclu']."</td>";
+					echo "<td>".$row['diag_time']."</td>";
+					echo "<td>".$row['doc_name']."</td>";
 					echo "</tr>";
          		}    
      		}  

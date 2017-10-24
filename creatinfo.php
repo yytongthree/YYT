@@ -93,12 +93,8 @@
 		username varchar(50) not null,
 		PN varchar(100) not null,
 		MCD date not null,
-		MN varchar(50),
-		UAD varchar(100),
-		tabu varchar(500),
-		AR varchar(500),
+		content longtext,
 		notes varchar(500),
-		count varchar(20),
 		docter varchar(20)
 	)";
 	//PN为药方名称
@@ -109,14 +105,15 @@
 		echo "<br>Error4: " . $sql . "<br>" . mysqli_error($conn);
 	}
 	
-	$sql = "CREATE TABLE cookbook 
+		$sql = "CREATE TABLE cookbook 
 	(
 		username varchar(50) not null,
-		f_name varchar(50) not null,
-		intake varchar(50),
-		make varchar(500),
-		eat_time time
+		weekday varchar(10),
+		notes varchar(500),
+		content longtext,
+		docter varchar(20)
 	)";
+	//CN为食谱名称
 	if(mysqli_query($conn,$sql))
    {
 		echo "<br>success5";
@@ -169,7 +166,7 @@
 	
 	$sql = "CREATE TABLE diagnosis 
 	(
-		pation_ID int(11),;
+		pation_ID int(11),
 		symptom varchar(200),
 		conclu varchar(100),
 		diag_time date,
@@ -182,5 +179,22 @@
 		echo "<br>Error9: " . $sql . "<br>" . mysqli_error($conn);
 	}
 	
+		$sql = "CREATE TABLE medicine 
+	(
+		MN varchar(50),
+		function varchar(500),
+		tabu varchar(500),
+		AR varchar(500),
+		notes varchar(500),
+		count varchar(20)
+	)";
+	if(mysqli_query($conn,$sql))
+   {
+		echo "<br>success10";
+	} else {
+		echo "<br>Error10: " . $sql . "<br>" . mysqli_error($conn);
+	}
+
+
 	mysqli_close($conn);
 ?>

@@ -31,9 +31,8 @@
      }  
      //释放记录集所占用的内存  
      mysqli_free_result($result);
-     $query = "SELECT MCD FROM prescription WHERE username='{$uname}' group by MCD"; 
-     //执行SQL语句  
-     $result = mysqli_query($connection,$query) or die("Error in query: $query. ".mysqli_error()); 
+	 	//关闭该数据库连接  
+     mysqli_close($connection);  
 ?>
 	<blockquote class="layui-elem-quote news_search">
 		<div class="layui-inline">
@@ -41,21 +40,13 @@
             <form name="form1" enctype="multipart/form-data" method="post" action="">
 		    	<select name="date" lay-verify="" class="layui-input">
   					<option value="">请选择一日期</option>
-<?php
-	 if(mysqli_num_rows($result)>0){  
-         //如果返回的数据集行数大于0，则开始以表格的形式显示   
-         while($row=mysqli_fetch_array($result)){
- ?>
-   					<option value="<?php echo $row['MCD'];?>"><?php echo $row['MCD'];?></option>
- <?php
-	 }
-	 }
-     //释放记录集所占用的内存  
-     mysqli_free_result($result);  
-
-	//关闭该数据库连接  
-     mysqli_close($connection);  
- ?>
+   					<option value="周一">周一</option>
+ 					<option value="周二">周二</option>
+					<option value="周三">周三</option>
+					<option value="周四">周四</option>
+                    <option value="周五">周五</option>
+                    <option value="周六">周六</option>
+                    <option value="周日">周日</option>
 				</select>
 		    </div>
 		    <input type="submit" class="layui-btn" name="submit" value="查询">
