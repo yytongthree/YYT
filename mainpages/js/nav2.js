@@ -19,7 +19,7 @@ var navs2 = [{
 		{
 			"title" : "健康食谱",
 			"icon" : "&#xe631;",
-			"href" : "",
+			"href" : "page/cookbook.php",
 			"spread" : false
 		}
 	]

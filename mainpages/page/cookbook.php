@@ -57,18 +57,14 @@
 	  	<table class="layui-table">
 		    <colgroup>
                 <col width="10%">
-                <col width="10%">
-                <col width="50%">
-                <col width="20%">
+                <col width="80%">
                 <col width="10%">
                  </colgroup>
             <thead>
                  <tr>
-					<th>药方名</th>
-					<th>开方日期</th>
-					<th>内容</th>
-                    <th>注意事项</th>
-                    <th>开方医生</th>
+					<th>时段</th>
+                    <th>内容</th>
+                    <th>医生</th>
 				</tr> 
 		    </thead>
 		    <tbody>
@@ -84,30 +80,28 @@
      	//显示返回的记录集行数  
      	if(mysqli_num_rows($result)>0){  
          //如果返回的数据集行数大于0，则开始以表格的形式显示   
-         	while($row=mysqli_fetch_row($result)){ 
-		 	 $uname=$row[0]; 
+         	while($row=mysqli_fetch_array($result)){ 
+		 	 $uname=$row['name']; 
          	}    
      	}  
      	//释放记录集所占用的内存  
      	mysqli_free_result($result);
-		$sql = "select * from $table_name where MCD='{$date}' and username='{$uname}'";
+		$sql = "select * from $table_name where weekday='{$date}' and username='{$uname}'";
 		$res = mysqli_query($conn,$sql);
 		//循环取出数据
 		if(mysqli_num_rows($res)>0){  
          //如果返回的数据集行数大于0，则开始以表格的形式显示   
 			while($row=mysqli_fetch_array($res)){ 
 				echo "<tr>";
-					echo "<td>".$row['PN']."</td>";
-					echo "<td>".$row['MCD']."</td>";
-					echo "<td>".$row['content']."</td>";
 					echo "<td>".$row['notes']."</td>";
+					echo "<td>".$row['content']."</td>";
 					echo "<td>".$row['docter']."</td>";
 				echo "</tr>";
 			}
 		mysqli_free_result($res); 
 		}
 	}
-	showTable($conn,"prescription");
+	showTable($conn,"cookbook");
 	mysqli_close($conn);
  ?>
             </tbody>         

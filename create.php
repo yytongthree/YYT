@@ -7,28 +7,28 @@
 	
 
 	
-	$sql="INSERT INTO cookbook (username,weekday,notes,content,docter) VALUES('蔡恒公','周日','早餐','花卷，牛奶，煮鸡蛋','扁鹊')";
+	$sql="INSERT INTO cookbook (username,weekday,notes,content,docter) VALUES('曹操','周五','早餐','花卷，米粥，鸡蛋','华佗')";
 	if(mysqli_query($conn,$sql))
    {
-		echo "<br>success7";
+		echo "<br>success45";
 	} else {
-		echo "<br>Error7: " . $sql . "<br>" . mysqli_error($conn);
+		echo "<br>Error45: " . $sql . "<br>" . mysqli_error($conn);
 	}
 	
-	$sql="INSERT INTO cookbook (username,weekday,notes,content,docter) VALUES('蔡恒公','周日','午餐','米饭，黑木耳炒鸡丁，糖醋白菜，南瓜汤','扁鹊')";
+	$sql="INSERT INTO cookbook (username,weekday,notes,content,docter) VALUES('曹操','周五','午餐','馒头，香菇炒豆腐，鱼丸汤，肉末炒豆角','华佗')";
 	if(mysqli_query($conn,$sql))
    {
-		echo "<br>success7";
+		echo "<br>success46";
 	} else {
-		echo "<br>Error7: " . $sql . "<br>" . mysqli_error($conn);
+		echo "<br>Error46: " . $sql . "<br>" . mysqli_error($conn);
 	}
 	
-	$sql="INSERT INTO cookbook (username,weekday,notes,content,docter) VALUES('蔡恒公','周日','晚餐','韭菜猪肉饺子，豆豉油麦菜，肉末炒豇豆','扁鹊')";
+	$sql="INSERT INTO cookbook (username,weekday,notes,content,docter) VALUES('曹操','周五','晚餐','米饭，醋溜土豆丝，炒空心菜，冬瓜骨头汤','华佗')";
 	if(mysqli_query($conn,$sql))
    {
-		echo "<br>success7";
+		echo "<br>success47";
 	} else {
-		echo "<br>Error7: " . $sql . "<br>" . mysqli_error($conn);
+		echo "<br>Error47: " . $sql . "<br>" . mysqli_error($conn);
 	}
 
 	mysqli_close($conn);

@@ -93,8 +93,8 @@
      	//显示返回的记录集行数  
      	if(mysqli_num_rows($result)>0){  
          //如果返回的数据集行数大于0，则开始以表格的形式显示   
-         	while($row=mysqli_fetch_row($result)){ 
-		 	 $uname=$row[0]; 
+         	while($row=mysqli_fetch_array($result)){ 
+		 	 $uname=$row['name']; 
          	}    
      	}  
      	//释放记录集所占用的内存  
