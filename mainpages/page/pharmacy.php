@@ -62,7 +62,7 @@
             </form>
 		</div>
         </blockquote>
-	<div class="layui-form news_list">
+	<div class="layui-form">
 	  	<table class="layui-table">
 		    <colgroup>
                 <col width="10%">

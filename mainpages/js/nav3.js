@@ -17,13 +17,13 @@ var navs3 = [{
 		{
 			"title" : "健康档案",
 			"icon" : "&#xe631;",
-			"href" : "",
+			"href" : "page/query_doc.php",
 			"spread" : false
 		},
 		{
 			"title" : "药品信息",
 			"icon" : "&#xe631;",
-			"href" : "",
+			"href" : "page/medicine.php",
 			"spread" : false
 		}
 	]
