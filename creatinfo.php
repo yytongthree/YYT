@@ -141,7 +141,7 @@
 	(
 		title varchar(50) not null,
 		origin varchar(50) not null,
-		content varchar(20)
+		content varchar(100)
 	)";
 	if(mysqli_query($conn,$sql))
    {
