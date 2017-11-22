@@ -30,7 +30,7 @@
 		die('Could not connect: ' . mysqli_error());
 	}
 	
-	$query = "SELECT * FROM inha_info WHERE nickname='wennyluo'"; 
+	$query = "SELECT * FROM inha_info"; 
      //执行SQL语句  
      $result = mysqli_query($conn,$query) or die("Error in query: $query. ".mysqli_error());  
      //显示返回的记录集行数  

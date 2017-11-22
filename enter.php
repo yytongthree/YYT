@@ -39,7 +39,7 @@
   ?> 
   <script type="text/javascript"> 
     alert("密码错误"); 
-    window.location.href="login.html"; 
+    window.location.href="index.html"; 
   </script> 
  <?php 
       } 
