@@ -1,4 +1,19 @@
 <?php
+	$conn = mysqli_connect("localhost","root","wenny673");
+	if (!$conn)
+	{
+		die('Could not connect: ' . mysqli_error());
+	}
+	if (mysqli_query($conn,"CREATE DATABASE yyt_chat"))
+	{
+		echo "<br>Database created";
+	}
+	else
+	{
+		echo "<br>Error creating database: " . mysqli_error();
+	}
+	mysqli_close($conn);
+	
 	$conn = mysqli_connect("localhost","root","wenny673","yyt_chat");
 	if (!$conn)
 	{
